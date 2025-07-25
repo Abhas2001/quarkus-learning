@@ -11,6 +11,7 @@ import java.util.Map;
 @Path("/hello")
 public class HelloResource {
 
+
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public Map<String,String> hello() {
