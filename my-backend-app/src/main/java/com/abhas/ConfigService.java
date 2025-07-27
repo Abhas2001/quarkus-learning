@@ -2,6 +2,9 @@
 package  com.abhas;
 
 import java.nio.charset.StandardCharsets;
+import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.inject.Inject;
+
 
 @ApplicationScoped
 public class ConfigService{
@@ -24,15 +27,14 @@ public class ConfigService{
         fakeStorage.put(path,bytear);
     }
 
-    public String fetchConfig(String path){
-
+    public String fetchConfig(String path) {
         byte[] data = fakeStorage.get(path);
         if (data == null) {
             return null;
         }
-        String newstr = new String(data,StandardCharsets.UTF_8);
-        return newstr;
+        return new String(data, StandardCharsets.UTF_8);
     }
+
 
     public void updateConfig(String path, String content) {
         fakeStorage.put(path, content.getBytes(StandardCharsets.UTF_8));

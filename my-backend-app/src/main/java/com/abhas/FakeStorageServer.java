@@ -3,6 +3,9 @@ package com.abhas;
 
 import java.util.Map;
 import java.util.HashMap;
+import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.inject.Inject;
+
 
 
 @ApplicationScoped
